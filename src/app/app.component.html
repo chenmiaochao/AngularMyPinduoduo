@@ -1,1 +1,9 @@
-<app-scrollable-tab [menus]="TopMenus" (tabSelected)="handleTabSelected($event)"></app-scrollable-tab>
+<app-scrollable-tab
+  [menus]="TopMenus"
+  [backgroundColor]="scrollableTabBgColor"
+  titleColor="#fff"
+  titleActiveColor="yellow"
+  indecatorColor="yellow"
+  (tabSelected)="handleTabSelected($event)">
+</app-scrollable-tab>
+<app-image-slider [sliders]="imageSliders"></app-image-slider>

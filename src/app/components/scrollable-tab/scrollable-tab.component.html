@@ -1,10 +1,10 @@
-<ul>
+<ul [ngStyle]="{'background-color': backgroundColor}">
   <li *ngFor="let menu of menus; let i = index;">
     <a href="#" 
-    [class.active]="i === selectedIndex"
+    [ngStyle]="{color: i === selectedIndex ? titleActiveColor : titleColor}"
     (click)="handlerSelection(i)"
     >{{ menu.title }}</a>
-    <span class="indecator" *ngIf="i === selectedIndex">
+    <span class="indecator" [ngStyle]="{'backgroundColor' : indecatorColor}" *ngIf="i === selectedIndex">
     </span>
   </li>
 </ul>

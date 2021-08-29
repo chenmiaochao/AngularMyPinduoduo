@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopMenu } from './components';
+import { TopMenu, ImageSlider } from './components';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,7 @@ import { TopMenu } from './components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  scrollableTabBgColor = 'red'
   TopMenus: TopMenu[] = [
     {
       title: '热门',
@@ -78,7 +79,43 @@ export class AppComponent {
     }
   ];
 
+  imageSliders: ImageSlider[] = [
+    {
+      imgUrl:
+        'https://media.istockphoto.com/photos/morning-jogging-picture-id497687118',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl:
+        'https://media.istockphoto.com/photos/listening-the-music-picture-id508949258',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl:
+        'https://media.istockphoto.com/photos/pretty-young-teenage-girl-relaxing-on-a-grass-picture-id521982322',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl:
+        'https://media.istockphoto.com/photos/beautiful-women-working-out-in-gym-picture-id623680490',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl:
+        'https://media.istockphoto.com/photos/jogging-with-my-best-friend-picture-id850045040',
+      link: '',
+      caption: ''
+    }
+  ];
+
   handleTabSelected(tabMenu: TopMenu) {
-    console.log(tabMenu)
+    const colors = ['red', 'blue', 'black'];
+    const idx = Math.floor(Math.random() * 3);
+    this.scrollableTabBgColor = colors[idx];
+    console.log(tabMenu);
   }
 }
