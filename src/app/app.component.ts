@@ -112,6 +112,8 @@ export class AppComponent {
     }
   ];
 
+  username = '';
+  
   handleTabSelected(tabMenu: TopMenu) {
     const colors = ['red', 'blue', 'black'];
     const idx = Math.floor(Math.random() * 3);
