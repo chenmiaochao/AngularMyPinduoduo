@@ -27,7 +27,10 @@ export class ImageSliderComponent implements OnInit {
     let i = 0;
     // 每两秒设置scrollLeft 往左拨动 , 值为scrollWidth/slider数组的长度
     setInterval(() => {
-      this.rd2.setProperty(this.imgSlider?.nativeElement, 'scrollLeft', ++i * this.imgSlider?.nativeElement.scrollWidth / this.sliders.length)
+      this.rd2.setProperty(
+        this.imgSlider?.nativeElement,
+        'scrollLeft',
+        ((++i % this.sliders.length) * this.imgSlider?.nativeElement.scrollWidth) / this.sliders.length)
     }, this.intervalBySeconds*1000)
   }
 }
